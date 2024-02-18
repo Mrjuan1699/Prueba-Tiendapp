@@ -26,6 +26,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/product">Productos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:3000/">Ecommerce</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>

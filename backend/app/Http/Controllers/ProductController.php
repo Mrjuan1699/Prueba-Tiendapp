@@ -105,7 +105,7 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        Session::flash('mensaje', 'producto eliminado correctamente.');
+        Session::flash('mensaje', 'Producto eliminado correctamente.');
 
         return redirect()->route('product.index');
     }

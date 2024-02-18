@@ -52,6 +52,11 @@ const MyComponent = () => {
                   Productos
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="http://localhost:3000">
+                  Ecommerce
+                </a>
+              </li>
             </ul>
           </div>
         </div>
