@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const MyComponent = () => {
   //Define un estado para almacenar los datos recibidos de la API
@@ -26,9 +27,10 @@ const MyComponent = () => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            Inicio
-          </a>
+          <Link className="nav-link" href="http://localhost:3000">
+            Ecommerce
+          </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -43,48 +45,58 @@ const MyComponent = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="http://127.0.0.1:8000/brand">
+                <Link className="nav-link" href="http://127.0.0.1:8000/brand">
                   Marcas
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://127.0.0.1:8000/product">
+                <Link className="nav-link" href="http://127.0.0.1:8000/product">
                   Productos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000">
-                  Ecommerce
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
       {Data ? (
         <div className="">
           {Data.map((item) => (
             <div className="d-flex justify-content-center mt-5">
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <div className="card mb-3">
                   <div className="card-body">
-                    <h5 className="card-title text-center">
-                      <b>{item.product}</b>
-                    </h5>
-                    <p className="card-text"><b>Observaciones:</b> {item.comments}</p>
+                    <div className="bg-dark rounded py-1">
+                      <h5 className="card-title text-center text-white">
+                        <b>{item.product}</b>
+                      </h5>
+                    </div>
+                    <p className="card-text mt-3">
+                      <b>Observaciones:</b> {item.comments}
+                    </p>
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">
-                        <b>Talla:</b> {item.size}
+                        <span className="text-muted">Talla: </span>
+                        <span class="badge bg-secondary rounded-pill">
+                          {item.size}
+                        </span>
                       </li>
                       <li className="list-group-item">
-                        <b>Marca:</b> {item.brand}
+                        <span className="text-muted">Marca: </span> 
+                        <span class="badge bg-secondary rounded-pill">
+                          {item.brand}
+                        </span>
                       </li>
                       <li className="list-group-item">
-                        <b>Inventario:</b> {item.inventory}
+                        <span className="text-muted">Inventario: </span>
+                        <span class="badge bg-secondary rounded-pill">
+                          {item.inventory}
+                        </span>
                       </li>
                       <li className="list-group-item">
-                        <b>Fecha de embarque:</b> {item.shipment_date}
+                        <span className="text-muted">Fecha de embarque: </span>
+                        <span class="badge bg-secondary rounded-pill">
+                          {item.shipment_date}
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -96,7 +108,9 @@ const MyComponent = () => {
       ) : (
         <p></p>
       )}
-      <footer className="text-center mt-4">Desarrollado por Juan Diego Pabon Rios</footer>
+      <footer className="text-center mt-4">
+        Desarrollado por Juan Diego Pabon Rios
+      </footer>
     </div>
   );
 };

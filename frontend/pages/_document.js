@@ -12,7 +12,7 @@ export default function Document() {
       <title>Prueba-Tiendapp</title>
 
       <Head />
-      <body>
+      <body className="bg-light">
         <Main />
         <NextScript />
       </body>
