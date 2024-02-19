@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import NavBar from "./navbar";
 
-const MyComponent = () => {
+const Home = () => {
   //Define un estado para almacenar los datos recibidos de la API
   const [Data, setData] = useState(null);
 
@@ -25,39 +25,7 @@ const MyComponent = () => {
   //Mapeo a los datos recibidos de la API
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link className="nav-link" href="http://localhost:3000">
-            Ecommerce
-          </Link>
-
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" href="http://127.0.0.1:8000/brand">
-                  Marcas
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="http://127.0.0.1:8000/product">
-                  Productos
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <NavBar></NavBar>
       {Data ? (
         <div className="">
           {Data.map((item) => (
@@ -70,31 +38,31 @@ const MyComponent = () => {
                         <b>{item.product}</b>
                       </h5>
                     </div>
-                    <p className="card-text mt-3">
-                      <b>Observaciones:</b> {item.comments}
+                    <p className="text-muted  ms-3 card-text mt-3">
+                       {item.comments}
                     </p>
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item">
                         <span className="text-muted">Talla: </span>
-                        <span class="badge bg-secondary rounded-pill">
+                        <span className="badge bg-secondary rounded-pill">
                           {item.size}
                         </span>
                       </li>
                       <li className="list-group-item">
                         <span className="text-muted">Marca: </span> 
-                        <span class="badge bg-secondary rounded-pill">
+                        <span className="badge bg-secondary rounded-pill">
                           {item.brand}
                         </span>
                       </li>
                       <li className="list-group-item">
                         <span className="text-muted">Inventario: </span>
-                        <span class="badge bg-secondary rounded-pill">
+                        <span className="badge bg-secondary rounded-pill">
                           {item.inventory}
                         </span>
                       </li>
                       <li className="list-group-item">
                         <span className="text-muted">Fecha de embarque: </span>
-                        <span class="badge bg-secondary rounded-pill">
+                        <span className="badge bg-secondary rounded-pill">
                           {item.shipment_date}
                         </span>
                       </li>
@@ -115,4 +83,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default Home;
