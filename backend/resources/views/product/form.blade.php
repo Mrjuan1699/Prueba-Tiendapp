@@ -99,8 +99,6 @@
                 </div>
             </div>
 
-
-
             @if (isset($product))
                 <button type="submit" class="btn btn-success mt-5">Editar producto</button>
             @else

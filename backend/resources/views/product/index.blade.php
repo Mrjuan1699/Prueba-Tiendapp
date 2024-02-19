@@ -48,7 +48,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6">No se encontraron registros.</td>
+                            <td colspan="7">No se encontraron registros.</td>
                         </tr>
                     @endforelse
 
@@ -58,7 +58,9 @@
                 </tfoot>
             </table>
             <!-- Validación por si no hay registros (evitar errores) -->
-           
+            @if ($products->count())
+            {{ $products->links() }}
+        @endif
         </div>
     </div>
 @endsection

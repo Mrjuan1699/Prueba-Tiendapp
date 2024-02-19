@@ -49,8 +49,7 @@
                     <p class="text-danger fw-bold form-text">{{ $message }}</p>
                 @enderror
             </div>
-
-
+            
             @if (isset($brand))
                 <button type="submit" class="btn btn-success mt-5">Editar marca</button>
             @else
